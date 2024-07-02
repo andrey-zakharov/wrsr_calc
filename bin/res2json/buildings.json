@@ -1,0 +1,1271 @@
+{
+  "building_data": {
+    "asphalt_plant": {
+      "name": 6169,
+      "sound": "amb_construction_plants",
+      "workers_needed": 5,
+      "consumption": {
+        "gravel": 25,
+        "bitumen": 4,
+        "eletric": 3
+      },
+      "production": {
+        "asphalt": 29
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "animal_farm": {
+      "name": 6104,
+      "sound": "amb_livestock_farm",
+      "workers_needed": 50,
+      "consumption": {
+        "plants": 0.4,
+        "water": 0.25
+      },
+      "production": {
+        "livestock": 0.2
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_ROOFTOP_BUILDING  1.0"
+      ]
+    },
+    "bauxite_processing": {
+      "name": 26302,
+      "sound": "amb_construction_plants",
+      "workers_needed": 25,
+      "consumption": {
+        "rawbauxite": 5
+      },
+      "production": {
+        "bauxite": 3
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "alumina_plant": {
+      "name": 26303,
+      "sound": "amb_construction_plants",
+      "workers_needed": 370,
+      "consumption": {
+        "bauxite": 0.21,
+        "coal": 0.08,
+        "chemicals": 0.007,
+        "water": 0.08
+      },
+      "production": {
+        "alumina": 0.09
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "bauxite_mine": {
+      "name": 26301,
+      "sound": "amb_mine",
+      "workers_needed": 45,
+      "production": {
+        "rawbauxite": 0.5
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "aluminium_plant": {
+      "name": 26304,
+      "sound": "amb_construction_plants",
+      "workers_needed": 350,
+      "consumption": {
+        "alumina": 0.15,
+        "chemicals": 0.0072
+      },
+      "consumption_per_second": {
+        "eletric": 2.35
+      },
+      "production": {
+        "aluminium": 0.087
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "brick_factory_v2": {
+      "name": 6171,
+      "sound": "amb_construction_plants",
+      "workers_needed": 75,
+      "consumption": {
+        "coal": 0.45
+      },
+      "production": {
+        "bricks": 0.68
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0"
+      ]
+    },
+    "cement_plant_v3": {
+      "name": 6170,
+      "sound": "amb_construction_plants",
+      "workers_needed": 30,
+      "consumption": {
+        "coal": 0.75,
+        "gravel": 7
+      },
+      "consumption_per_second": {
+        "eletric": 0.1
+      },
+      "production": {
+        "cement": 2.7
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING\t\t1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "chemical_plant": {
+      "name": 6054,
+      "sound": "amb_construction_plants",
+      "workers_needed": 60,
+      "consumption": {
+        "gravel": 0.012,
+        "wood": 0.014,
+        "plants": 0.013,
+        "oil": 0.02,
+        "water": 0.17
+      },
+      "consumption_per_second": {
+        "eletric": 0.24
+      },
+      "production": {
+        "chemicals": 0.0135
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "clothing_factory": {
+      "name": 6352,
+      "sound": "amb_fabric_factory",
+      "workers_needed": 80,
+      "consumption": {
+        "fabric": 0.03
+      },
+      "production": {
+        "clothes": 0.015
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0"
+      ]
+    },
+    "coal_mine": {
+      "name": 6159,
+      "sound": "amb_mine",
+      "workers_needed": 220,
+      "production": {
+        "rawcoal": 4.2
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_TUNNELING 1.0"
+      ],
+      "cost_resource": [
+        "workers 3000",
+        "boards 75",
+        "concrete 180",
+        "steel 45"
+      ]
+    },
+    "coal_processing": {
+      "name": 6162,
+      "sound": "amb_construction_plants",
+      "workers_needed": 15,
+      "consumption": {
+        "rawcoal": 14
+      },
+      "consumption_per_second": {
+        "eletric": 0.25
+      },
+      "production": {
+        "coal": 8
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "concrete_plant_v2": {
+      "name": 6168,
+      "sound": "amb_construction_plants",
+      "workers_needed": 5,
+      "consumption": {
+        "gravel": 27,
+        "cement": 6,
+        "water": 17
+      },
+      "consumption_per_second": {
+        "eletric": 0.2
+      },
+      "production": {
+        "concrete": 35
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "distillery": {
+      "name": 6102,
+      "sound": "amb_distillery",
+      "workers_needed": 100,
+      "consumption": {
+        "plants": 0.3,
+        "water": 0.135
+      },
+      "consumption_per_second": {
+        "eletric": 0.17
+      },
+      "production": {
+        "alcohol": 0.06
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0"
+      ]
+    },
+    "eletronic_factory": {
+      "name": 6356,
+      "sound": "amb_electronics",
+      "workers_needed": 150,
+      "consumption": {
+        "ecomponents": 0.01,
+        "plastics": 0.015,
+        "mcomponents": 0.01
+      },
+      "production": {
+        "eletronics": 0.03
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING\t\t1.0",
+        "SOVIET_CONSTRUCTION_ROOFTOP_BUILDING\t\t1.0"
+      ]
+    },
+    "drydock": {
+      "name": 6391,
+      "sound": "amb_production_lines",
+      "workers_needed": 400,
+      "consumption": {
+        "steel": 1,
+        "plastics": 1,
+        "mcomponents": 1,
+        "ecomponents": 1,
+        "fabric": 1,
+        "eletronics": 1
+      },
+      "production": {
+        "vehicles": 1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "explosive_factory": {
+      "name": 26365,
+      "sound": "amb_construction_plants",
+      "workers_needed": 75,
+      "consumption": {
+        "chemicals": 0.01,
+        "gravel": 0.03,
+        "wood": 0.02
+      },
+      "production": {
+        "explosives": 0.015
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0"
+      ]
+    },
+    "fabric_factory": {
+      "name": 6351,
+      "sound": "amb_fabric_factory",
+      "workers_needed": 100,
+      "consumption": {
+        "plants": 0.2,
+        "chemicals": 0.005,
+        "water": 0.11
+      },
+      "consumption_per_second": {
+        "eletric": 0.18
+      },
+      "production": {
+        "fabric": 0.05
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "eletronic_components_factory": {
+      "name": 6355,
+      "sound": "amb_electronics",
+      "workers_needed": 150,
+      "consumption": {
+        "plastics": 0.01,
+        "steel": 0.01,
+        "chemicals": 0.008
+      },
+      "production": {
+        "ecomponents": 0.025
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING\t\t1.0"
+      ]
+    },
+    "farm_medium": {
+      "name": 6116,
+      "workers_needed": 0,
+      "production": {
+        "plants": 10
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "fertilizer_liquid": {
+      "name": 7573,
+      "sound": "amb_food",
+      "workers_needed": 25,
+      "consumption": {
+        "chemicals": 0.0125,
+        "water": 0.6
+      },
+      "production": {
+        "fertiliser_liquid": 0.7
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "farm_small": {
+      "name": 6115,
+      "workers_needed": 0,
+      "production": {
+        "plants": 10
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "fertilizer_liquid_v2": {
+      "name": 7573,
+      "sound": "amb_food",
+      "workers_needed": 25,
+      "consumption": {
+        "chemicals": 0.0125,
+        "water": 0.6
+      },
+      "production": {
+        "fertiliser_liquid": 0.7
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "farm_large": {
+      "name": 6117,
+      "workers_needed": 0,
+      "production": {
+        "plants": 10
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "food_factory": {
+      "name": 6101,
+      "sound": "amb_food",
+      "workers_needed": 170,
+      "consumption": {
+        "plants": 0.25,
+        "water": 0.05
+      },
+      "production": {
+        "food": 0.12
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0"
+      ]
+    },
+    "fertilizer": {
+      "name": 7572,
+      "sound": "amb_food",
+      "workers_needed": 25,
+      "consumption": {
+        "waste_bio": 1.2,
+        "chemicals": 0.003
+      },
+      "production": {
+        "fertiliser": 1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "gravelmine": {
+      "name": 6155,
+      "workers_needed": 40,
+      "production": {
+        "rawgravel": 3.5
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING\t1.0"
+      ]
+    },
+    "gravel_mine_big": {
+      "name": 6155,
+      "workers_needed": 100,
+      "production": {
+        "rawgravel": 3.5
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "gravel_processing_small": {
+      "name": 6158,
+      "workers_needed": 5,
+      "consumption": {
+        "rawgravel": 8
+      },
+      "consumption_per_second": {
+        "eletric": 0.15
+      },
+      "production": {
+        "gravel": 5.5
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "gravel_processing": {
+      "name": 6158,
+      "workers_needed": 15,
+      "consumption": {
+        "rawgravel": 8
+      },
+      "consumption_per_second": {
+        "eletric": 0.4
+      },
+      "production": {
+        "gravel": 5.5
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING\t1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING\t1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING\t1.0"
+      ]
+    },
+    "heating_plant_small": {
+      "name": 6333,
+      "workers_needed": 7,
+      "consumption": {
+        "coal": 0.3
+      },
+      "production": {
+        "heat": 300
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "heating_plant_big": {
+      "name": 6335,
+      "workers_needed": 30,
+      "consumption": {
+        "coal": 0.28
+      },
+      "production": {
+        "heat": 350
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "incinerator_heat": {
+      "name": 7559,
+      "workers_needed": 15,
+      "consumption": {
+        "waste": 2.5
+      },
+      "production": {
+        "heat": 450
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "iron_mine": {
+      "name": 6160,
+      "sound": "amb_mine",
+      "workers_needed": 250,
+      "production": {
+        "rawiron": 4
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_TUNNELING 1.0"
+      ],
+      "cost_resource": [
+        "workers 3050",
+        "boards 75",
+        "concrete 180",
+        "steel 45"
+      ]
+    },
+    "iron_processing": {
+      "name": 6161,
+      "sound": "amb_construction_plants",
+      "workers_needed": 15,
+      "consumption": {
+        "rawiron": 15
+      },
+      "consumption_per_second": {
+        "eletric": 0.28
+      },
+      "production": {
+        "iron": 7
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "incinerator_powerplant": {
+      "name": 7560,
+      "workers_needed": 20,
+      "consumption": {
+        "waste": 3
+      },
+      "production": {
+        "eletric": 33
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "mechanical_components_factory": {
+      "name": 6357,
+      "sound": "amb_production_lines",
+      "workers_needed": 150,
+      "consumption": {
+        "steel": 0.15
+      },
+      "production": {
+        "mcomponents": 0.1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING\t\t1.0"
+      ]
+    },
+    "oil_mine": {
+      "name": 6051,
+      "workers_needed": 0,
+      "consumption_per_second": {
+        "eletric": 0.065
+      },
+      "production": {
+        "oil": 7
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "nuclear_fuel_plant": {
+      "name": 6317,
+      "sound": "amb_construction_plants",
+      "workers_needed": 50,
+      "consumption": {
+        "uf6": 0.008,
+        "chemicals": 0.015,
+        "vehicles": 1
+      },
+      "consumption_per_second": {
+        "eletric": 0.7
+      },
+      "production": {
+        "nuclearfuel": 0.0019,
+        "vehicles": 1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "oil_rafinery_v2": {
+      "name": 6053,
+      "sound": "amb_construction_plants",
+      "workers_needed": 500,
+      "consumption": {
+        "oil": 0.5
+      },
+      "consumption_per_second": {
+        "eletric": 0.21
+      },
+      "production": {
+        "fuel": 0.25,
+        "bitumen": 0.15
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "panels_factory_v3": {
+      "name": 6172,
+      "sound": "amb_construction_plants",
+      "workers_needed": 65,
+      "consumption": {
+        "cement": 0.15,
+        "gravel": 1
+      },
+      "consumption_per_second": {
+        "eletric": 0.1
+      },
+      "production": {
+        "prefabpanels": 1.1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "plastics_factory": {
+      "name": 6354,
+      "sound": "amb_construction_plants",
+      "workers_needed": 60,
+      "consumption": {
+        "chemicals": 0.05,
+        "oil": 0.45
+      },
+      "consumption_per_second": {
+        "eletric": 0.26
+      },
+      "production": {
+        "plastics": 0.11
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING\t\t1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "powerplant_wind2": {
+      "name": 6338,
+      "workers_needed": 0,
+      "production": {
+        "eletric": 35
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "powerplant_coal_v2": {
+      "name": 6300,
+      "workers_needed": 20,
+      "consumption": {
+        "coal": 1.2
+      },
+      "production": {
+        "eletric": 70
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "powerplant_wind1": {
+      "name": 6337,
+      "workers_needed": 0,
+      "production": {
+        "eletric": 15
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "powerplant_nuclear_single": {
+      "name": 6318,
+      "workers_needed": 40,
+      "consumption": {
+        "nuclearfuel": 0.001,
+        "vehicles": 1,
+        "water": 0.17
+      },
+      "production": {
+        "eletric": 117,
+        "nuclearfuelburned": 0.0005,
+        "vehicles": 1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "powerplant_gas": {
+      "name": 6339,
+      "workers_needed": 15,
+      "consumption": {
+        "oil": 0.59
+      },
+      "production": {
+        "eletric": 70
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "powerplant_nuclear_double": {
+      "name": 6319,
+      "workers_needed": 80,
+      "consumption": {
+        "nuclearfuel": 0.001,
+        "vehicles": 1,
+        "water": 0.17
+      },
+      "production": {
+        "eletric": 117,
+        "nuclearfuelburned": 0.0005,
+        "vehicles": 1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "powerplant_solar": {
+      "name": 6340,
+      "workers_needed": 8,
+      "production": {
+        "eletric": 70
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "production_airplane": {
+      "name": 2087,
+      "sound": "amb_production_lines",
+      "workers_needed": 500,
+      "consumption": {
+        "steel": 1,
+        "aluminium": 1,
+        "plastics": 1,
+        "mcomponents": 1,
+        "ecomponents": 1,
+        "fabric": 1,
+        "eletronics": 1
+      },
+      "production": {
+        "vehicles": 1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "production_vehicle": {
+      "name": 2020,
+      "sound": "amb_production_lines",
+      "workers_needed": 400,
+      "consumption": {
+        "steel": 1,
+        "plastics": 1,
+        "mcomponents": 1,
+        "ecomponents": 1,
+        "fabric": 1,
+        "eletronics": 1
+      },
+      "production": {
+        "vehicles": 1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "production_train2": {
+      "name": 2021,
+      "sound": "amb_production_lines",
+      "workers_needed": 400,
+      "consumption": {
+        "steel": 1,
+        "plastics": 1,
+        "mcomponents": 1,
+        "ecomponents": 1,
+        "fabric": 1,
+        "eletronics": 1
+      },
+      "production": {
+        "vehicles": 1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "sawmill": {
+      "name": 7002,
+      "sound": "amb_woodcutting",
+      "workers_needed": 20,
+      "consumption": {
+        "wood": 9
+      },
+      "consumption_per_second": {
+        "eletric": 0.027
+      },
+      "production": {
+        "boards": 7
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_ROOFTOP_BUILDING 1.0"
+      ]
+    },
+    "sewage_treatment_big": {
+      "name": 7511,
+      "sound": "amb_pumping_sewage",
+      "workers_needed": 20,
+      "consumption": {
+        "usagewater": 11,
+        "chemicals": 0.03
+      },
+      "consumption_per_second": {
+        "eletric": 0.154
+      },
+      "production": {
+        "water": 22
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "sewage_treatment_small": {
+      "name": 7512,
+      "sound": "amb_pumping_sewage",
+      "workers_needed": 10,
+      "consumption": {
+        "usagewater": 8,
+        "chemicals": 0.032
+      },
+      "consumption_per_second": {
+        "eletric": 0.085
+      },
+      "production": {
+        "water": 16.5
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "slaughterhouse": {
+      "name": 6105,
+      "sound": "amb_slaughterhouse",
+      "workers_needed": 50,
+      "consumption": {
+        "livestock": 3
+      },
+      "production": {
+        "meat": 1.2
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_PANELS_LAYING 1.0"
+      ]
+    },
+    "steel_mill_v2": {
+      "name": 6353,
+      "sound": "amb_construction_plants",
+      "workers_needed": 500,
+      "consumption": {
+        "coal": 0.75,
+        "iron": 0.4
+      },
+      "consumption_per_second": {
+        "eletric": 0.55
+      },
+      "production": {
+        "steel": 0.086
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        " SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        " SOVIET_CONSTRUCTION_SKELETON_CASTING 1.0",
+        " SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "uranium_conversion": {
+      "name": 6316,
+      "sound": "amb_construction_plants",
+      "workers_needed": 80,
+      "consumption": {
+        "yellowcake": 0.025,
+        "chemicals": 0.0026
+      },
+      "consumption_per_second": {
+        "eletric": 0.8
+      },
+      "production": {
+        "uf6": 0.012,
+        "vehicles": 1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "uranium_processing": {
+      "name": 6315,
+      "sound": "amb_construction_plants",
+      "workers_needed": 60,
+      "consumption": {
+        "uranium": 0.6
+      },
+      "consumption_per_second": {
+        "eletric": 0.6
+      },
+      "production": {
+        "yellowcake": 0.0285
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "uranium_mine": {
+      "name": 6314,
+      "sound": "amb_mine",
+      "workers_needed": 100,
+      "production": {
+        "uranium": 0.75
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_TUNNELING 1.0"
+      ],
+      "cost_resource": [
+        "workers 3700",
+        "boards 98",
+        "concrete 220",
+        "steel 65"
+      ]
+    },
+    "waste_aluminiumrecycling": {
+      "name": 7571,
+      "sound": "amb_separation_recycling",
+      "workers_needed": 25,
+      "consumption": {
+        "waste_aluminium": 1
+      },
+      "production": {
+        "aluminium": 0.5
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "waste_gravelrecycling": {
+      "name": 7565,
+      "sound": "amb_separation_recycling",
+      "workers_needed": 15,
+      "consumption": {
+        "waste_gravel": 6
+      },
+      "consumption_per_second": {
+        "eletric": 0.3
+      },
+      "production": {
+        "gravel": 4
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "waste_plasticrecycling": {
+      "name": 7564,
+      "sound": "amb_separation_recycling",
+      "workers_needed": 20,
+      "consumption": {
+        "waste_plastic": 0.5
+      },
+      "consumption_per_second": {
+        "eletric": 0.07
+      },
+      "production": {
+        "plastics": 0.1
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "waste_steelrecycling": {
+      "name": 7570,
+      "sound": "amb_separation_recycling",
+      "workers_needed": 30,
+      "consumption": {
+        "waste_steel": 1.2
+      },
+      "production": {
+        "steel": 0.65
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "water_to_water": {
+      "name": 7520,
+      "sound": "amb_pumping_water",
+      "workers_needed": 0,
+      "production": {
+        "water": 150
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "water_treatment_big": {
+      "name": 7515,
+      "sound": "amb_pumping_water",
+      "workers_needed": 10,
+      "consumption": {
+        "usagewater": 3,
+        "chemicals": 0.047
+      },
+      "consumption_per_second": {
+        "eletric": 0.127
+      },
+      "production": {
+        "water": 30
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "water_treatment_small": {
+      "name": 7514,
+      "sound": "amb_pumping_water",
+      "workers_needed": 5,
+      "consumption": {
+        "usagewater": 2.6,
+        "chemicals": 0.05
+      },
+      "consumption_per_second": {
+        "eletric": 0.065
+      },
+      "production": {
+        "water": 24
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0"
+      ]
+    },
+    "water_well_small": {
+      "name": 7500,
+      "sound": "amb_pumping_water",
+      "workers_needed": 0,
+      "consumption_per_second": {
+        "eletric": 0.035
+      },
+      "production": {
+        "water": 70
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0"
+      ]
+    },
+    "water_well_big": {
+      "name": 7501,
+      "sound": "amb_pumping_water",
+      "workers_needed": 7,
+      "consumption_per_second": {
+        "eletric": 0.095
+      },
+      "production": {
+        "water": 215
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_STEEL_LAYING 1.0",
+        "SOVIET_CONSTRUCTION_BRICKS_LAYING 1.0"
+      ]
+    },
+    "woodcutting_post": {
+      "name": 7001,
+      "sound": "amb_woodcutting",
+      "workers_needed": 10,
+      "production": {
+        "wood": 6.25
+      },
+      "cost_work": [
+        "SOVIET_CONSTRUCTION_GROUNDWORKS 0.0",
+        "SOVIET_CONSTRUCTION_BOARDS_LAYING 1.0"
+      ]
+    }
+  },
+  "resources": [
+    "gravel",
+    "bitumen",
+    "eletric",
+    "asphalt",
+    "plants",
+    "water",
+    "livestock",
+    "rawbauxite",
+    "bauxite",
+    "coal",
+    "chemicals",
+    "alumina",
+    "aluminium",
+    "bricks",
+    "cement",
+    "wood",
+    "oil",
+    "fabric",
+    "clothes",
+    "rawcoal",
+    "concrete",
+    "alcohol",
+    "ecomponents",
+    "plastics",
+    "mcomponents",
+    "eletronics",
+    "steel",
+    "vehicles",
+    "explosives",
+    "fertiliser_liquid",
+    "food",
+    "waste_bio",
+    "fertiliser",
+    "rawgravel",
+    "heat",
+    "waste",
+    "rawiron",
+    "iron",
+    "uf6",
+    "nuclearfuel",
+    "fuel",
+    "prefabpanels",
+    "nuclearfuelburned",
+    "boards",
+    "usagewater",
+    "meat",
+    "yellowcake",
+    "uranium",
+    "waste_aluminium",
+    "waste_gravel",
+    "waste_plastic",
+    "waste_steel"
+  ]
+}
