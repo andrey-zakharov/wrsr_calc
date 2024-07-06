@@ -4,10 +4,44 @@
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
+    <title>Workers & Resources: Soviet Republic (wrsr) omni-calculator</title>
+    <style>
+        html, body {
+            margin: 0; padding: 0;
+        }
+        body {   min-height: 100vh; z-index: -2; background: black }
+        #app {   width: 100vw;
+            height: 100vh; }
+      .centered {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100%;
+          background: transparent;
+          position: relative;
+      }
+      .centered::after {
+          content: "";
+          position: absolute;
+          width: 256px;
+          height: 256px;
+          z-index: -1;
+
+          background: url('./src/assets/i/loading_wheel.png') center no-repeat;
+          animation: spin 3s linear infinite;
+      }
+      @keyframes spin {
+          from { transform:rotate(0deg) }
+          to { transform:rotate(360deg) }
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div id="app">
+        <div class="centered">
+            <img src="./src/assets/i/loading_star.png" alt="loading" />
+        </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>

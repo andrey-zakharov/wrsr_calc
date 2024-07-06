@@ -40,7 +40,8 @@ building.forEach( b => {
 // console.log( byConsumption )
 // console.log( byProduction )
 
-const goal = ref( new Map< string, number >() )
+// tons per day
+const goal = ref( new Map< ResourceId, number >() )
 const selectedResource = ref()
 
 function imgUrl(resName: string) { //return `@/assets/i/res/${resName}.png`
@@ -69,58 +70,74 @@ const goalsTable = computed( () => {
       amount: goal.value.get( r )
   }) )
 })
+//   resourceType: string,
 
-//const minimizer( )
-type Demand = {
-  buildingType: Building,
-  workersNeeded: number,
-  efficiencyNeeded?: number,
-} // with sum operator
+type ResourceId = string
 
 function buildingForResource( resource_name: string ) {
-  console.assert( byProduction.has( resource_name ) )
-  console.debug( byProduction.has( resource_name ) )
+  console.debug( resource_name, byProduction.has( resource_name ) )
+  //console.assert( byProduction.has( resource_name ) )
   return byProduction.get( resource_name )!.at(0) // TBD here reduce by criteria
 }
+
 //recursive
-function traverseAllNeeds( resource_name: string, amountPerDay: number, visit: (demand: Demand) => void ) {
+function traverseAllNeeds( resource_name: ResourceId, amountPerDay: number, visit: (demand: BuildingResult) => void, visited: Set<Building['id']> = new Set() ) {
   const buildingType = buildingForResource( resource_name )
+
+  if ( visited.has( buildingType.id ) ) {
+    return
+  }
+
+  visited.add( buildingType.id )
 
   const workersNeeded = amountPerDay / buildingType.data.production[ resource_name ] // tonns per day
 
-  visit( { buildingType, workersNeeded } )
-
   const children = (buildingType.data.consumption ?? {})
 
-  Object.keys(children).forEach( cons => {
-    traverseAllNeeds( cons, workersNeeded * children[cons], visit )
-  })
+  visit( { buildingId: buildingType.id, workersNeeded } )
+
+
+  Object.keys(children).filter( x => byProduction.has( x ) ).forEach( cons => {
+    traverseAllNeeds( cons, workersNeeded * children[cons], visit, visited )
+  } )
+}
+
+type BuildingId = string
+type BuildingResult = {
+  buildingId: BuildingId,
+  workersNeeded?: number,
+  efficiencyNeeded?: number,
+} // with sum operator
+
+function appendBuildingResult( a: BuildingResult, b: BuildingResult ) {
+  a.workersNeeded += b.workersNeeded
+  a.efficiencyNeeded += b.efficiencyNeeded
 }
 
 // Дерево зданий, производящих необходимый объем.
-const materialTree = computed( () => {
+const buildingsTree = computed( () => {
 
   // Необходимо решить задачу рюкзака, или показать варианты пользователю. Или иметь настройки минимизации.
-  const products = new Map<string, Demand>()
+  const root = new Map<BuildingId, BuildingResult>()
 
-  goalsTable.value.forEach( goal => {
+  goal.value.forEach( ( amount, resourceId ) => {
 
-    traverseAllNeeds( goal.key, goal.amount, d => {
-      if ( !products.has( d.buildingType.id ) ) {
-        products.set( d.buildingType.id, d )
+    traverseAllNeeds( resourceId, amount, d => {
+      if ( !root.has( d.buildingId ) ) {
+        root.set( d.buildingId, d )
       } else {
-        const p = products.get( d.buildingType.id )
-        p.workersNeeded += d.workersNeeded
-        p.efficiencyNeeded += d.efficiencyNeeded
+        const p = root.get( d.buildingId )
+        appendBuildingResult( p, d )
       }
     })
   } )
 
-  return products
-})
+  return root
+} )
+
 const buildingsNodes = computed( () => {
   const nodes = []
-  materialTree.value.forEach( (v, k) => {
+  buildingsTree.value.forEach( (v, k) => {
     nodes.push( {
       key: k,
       data: {
