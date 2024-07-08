@@ -4,12 +4,9 @@ import * as d3 from "d3";
 import {computed, onMounted, ref, watch} from "vue";
 import {useWindowSize} from 'vue-window-size';
 import {Building} from "@/Building";
+import {building, buildingMap} from "@/db";
+import {max, min} from "d3";
 
-const props = defineProps<{
-  buildingMap: Map<number, Building>
-}>()
-
-const building = [ ... props.buildingMap.values() ]
 const maxConsumptionCount = building.reduce( (m, b) => Math.max( m, Object.keys( b.data.consumption ?? {} ).length ), 0 )
 
 function setCanvasSize(width: number, height: number) {
@@ -30,8 +27,9 @@ watch( [width, height], () => {
 
 onMounted( () => {
   const r = 24 // line margin
-  const width = wrapper.value.clientWidth
-  const height = wrapper.value.clientHeight
+  const width = Math.max( 600, wrapper.value.clientWidth )
+  const height = Math.max( 800, wrapper.value.clientHeight )
+
   const markerBoxWidth = 12
   const markerBoxHeight = 6
   const arrowPoints = [[0, 0], [markerBoxWidth, markerBoxHeight/2], [0, markerBoxHeight]];
@@ -208,8 +206,8 @@ onMounted( () => {
       //.force("charge", d3.forceManyBody().strength(-100))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("collider", d3.forceCollide( 75 ) )
       .force( "level", d3.forceX( d => {
-        const weight = Object.keys( props.buildingMap.get( d.name ).data.consumption ?? {} ).length
-        return weight * (width/maxConsumptionCount)
+        const weight = Object.keys( buildingMap.get( d.name ).data.consumption ?? {} ).length
+        return weight * (width / maxConsumptionCount)
       }).strength(0.2))
       .force( "center", d3.forceY( height / 2).strength(0.2) )
       //.force("center", d3.forceCenter(width / 2, height / 2))     // This force attracts nodes to the center of the svg area

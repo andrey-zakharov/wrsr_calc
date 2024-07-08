@@ -6,6 +6,7 @@ type BuildingData = {
     consumption_per_second: ResourceAmount,
     production: ResourceAmount,
     workers_needed: number,
+    professors_needed: number,
 }
 export class Building {
     constructor(
@@ -15,6 +16,16 @@ export class Building {
         if ( data.consumption?.eletric ) {
             delete data.consumption.eletric
         }
+        // containers hack, TBD string condition
+        if ( data.consumption?.vehicles > 0 && Object.keys( data.consumption ).length > 1 ) {
+            // container detected
+            delete data.consumption.vehicles
+        }
+        if ( data.production?.vehicles > 0 && Object.keys( data.production ).length > 1 ) {
+            // container detected
+            delete data.production.vehicles
+        }
+
         //data.consumption = { ...data.consumption, ...data.consumption_per_second }
     }
 

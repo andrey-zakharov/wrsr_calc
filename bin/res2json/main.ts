@@ -1,6 +1,6 @@
 #!/usr/bin/env -S npx vite-node main.ts
 // var exports = {};
-const gameDir = "G:\\Games\\Workers & Resources Soviet Republic\\Workers & Resources Soviet Republic\\media_soviet\\"
+const gameDir = "G:\\SteamLibrary\\steamapps\\common\\SovietRepublic\\media_soviet\\"
 const resultDir = "./"
 import * as os from 'os'
 import * as fs from 'fs'
@@ -16,7 +16,10 @@ fs.writeFileSync(resultDir + "buildings.json", JSON.stringify({
     building_data: bdata, resources: [ ... ress.values() ]
 }, undefined, 2))
 
-fs.mkdirSync( resultDir + "i" )
+const imageDir = resultDir + "i"
+if ( !fs.existsSync( imageDir ) ) {
+    fs.mkdirSync(imageDir)
+}
 Object.keys( bdata ).forEach( bn => {
     const iname = gameDir + `editor\\tool_${bn}.png`
     fs.copyFileSync( iname, resultDir + `i/${bn}.png`)
@@ -81,6 +84,7 @@ function visitMeta( fn: string, map: Awaited<ReturnType<typeof visitFile>> ) {
         name: parseInt( map.get( "name" ).pop() ),
         sound: map.get( "ambient_sfx" )?.pop(),
         workers_needed: map.get("workers_needed") ? parseInt( map.get("workers_needed")?.pop() ) : 0,
+        professors_needed: map.get("profesors_needed") ? parseInt( map.get("profesors_needed")?.pop() ) : 0,
         consumption: parseMaterials( map.get("consumption") ),
         consumption_per_second: parseMaterials( map.get("consumption_per_second") ),
         production: parseMaterials( map.get("production") ),
