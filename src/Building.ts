@@ -30,7 +30,7 @@ export class Building {
     }
 
     public get maxOutput() {
-        return objectMap( this.data.production, v => v * this.data.workers_needed )
+        return objectMap( this.data.production, v => v * this.data.workers_needed || 1 )
     }
 
     public get maxInput() {

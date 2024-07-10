@@ -16,7 +16,7 @@ onMounted( () => {
 </script>
 
 <template>
-  <TabView class="w-full h-full">
+  <TabView>
 
     <TabPanel header="Calculator">
       <Calculator></Calculator>
@@ -24,7 +24,7 @@ onMounted( () => {
 
     <TabPanel header="Overall Graph" ref="panel">
       <!--      <div class="wrapper relative w-full h-full" ref="wrapper">-->
-      <OverallGraph width="100%"></OverallGraph>
+      <OverallGraph></OverallGraph>
       <!--      </div>-->
     </TabPanel>
 
@@ -43,4 +43,9 @@ header {
     padding-right: calc(var(--section-gap) / 2);
   }
 }
+
+>>> .p-tabview-panel {
+  height: 100vb;
+}
+
 </style>

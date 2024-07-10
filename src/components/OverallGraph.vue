@@ -27,16 +27,16 @@ watch( [width, height], () => {
 
 onMounted( () => {
   const r = 24 // line margin
-  const width = Math.max( 600, wrapper.value.clientWidth )
-  const height = Math.max( 800, wrapper.value.clientHeight )
+  const width = Math.max( 800, wrapper.value?.clientWidth )
+  const height = Math.max( 600, wrapper.value?.clientHeight )
 
   const markerBoxWidth = 12
   const markerBoxHeight = 6
   const arrowPoints = [[0, 0], [markerBoxWidth, markerBoxHeight/2], [0, markerBoxHeight]];
   const svg = d3
       .select("svg")
-      .attr("width", width)
-      .attr("height", height)
+      // .attr("width", width)
+      // .attr("height", height)
       .style("pointer-events", "all")
       .call(d3.zoom().on("zoom", function (e) {
         svg.attr("transform", e.transform)
@@ -264,7 +264,7 @@ onMounted( () => {
 </script>
 
 <template>
-  <svg   ref="wrapper"   width="800" height="600"></svg>
+  <svg   ref="wrapper" style="height: 100vb;"></svg>
 </template>
 
 <style scoped>

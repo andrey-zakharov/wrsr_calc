@@ -13,7 +13,8 @@ import {building} from "@/db";
 import {build} from "vite";
 import Chip from 'primevue/chip';
 import Menubar from "primevue/menubar";
-
+import InputNumber from "primevue/inputnumber";
+import workers_workers_loedu from '@/assets/i/g/workers_workers_loedu.png'
 
 // 1 worker = 2m^3 per day of water?
 
@@ -33,7 +34,13 @@ building.forEach( b => {
     if ( !byProduction.has( c ) ) {
       byProduction.set( c, [] )
     }
-    byProduction.get( c ).push( b )
+    // sort
+    const ba = byProduction.get( c )
+    if ( ba.length > 0 && ba[0].maxOutput[c] < b.maxOutput[c] ) {
+      ba.unshift( b )
+    } else {
+      byProduction.get(c).push(b)
+    }
   })
 })
 //
@@ -51,6 +58,7 @@ function resourceImgUrl(resName: string) { //return `@/assets/i/res/${resName}.p
 function buildingImgUrl(bid: BuildingId) {
   return new URL(`../assets/i/b/${bid}.png`, import.meta.url).href
 }
+
 
 function addGoal(res: ResourceId) {
   const bs = byProduction.get( res )
@@ -107,10 +115,12 @@ function traverseAllNeeds(
   if ( visited.has( building.id ) ) {
     return undefined
   }
-
   const workersNeeded = building.data.workers_needed > 0 ?
-      amountPerDay / building.data.production[ resource_name ] // tonns per day
+      // precision bug hack
+      ( amountPerDay * 100 )/ ( 100 * building.data.production[ resource_name ] ) // tonns per day
       : 0
+
+  const professorsNeeded = workersNeeded ? building.data.professors_needed * workersNeeded / building.data.workers_needed : 0
 
   const efficiencyNeeded = building.data.workers_needed == 0 ?
       amountPerDay / building.data.production[ resource_name ] // tonns per day
@@ -124,6 +134,7 @@ function traverseAllNeeds(
   const res = {
     building: building,
     workersNeeded,
+    professorsNeeded,
     efficiencyNeeded,
     electricNeeded,
     demands: [],
@@ -146,6 +157,7 @@ type BuildingId = string
 type BuildingResult = {
   building: Building,
   workersNeeded: number,
+  professorsNeeded: number,
   efficiencyNeeded?: number,
   electricNeeded: number,
   demands: BuildingResult[],
@@ -222,7 +234,7 @@ function convertBuildingToTreeNode(b: BuildingResult, keyPrefix?: string) {
       name: b.building.id,
       img: buildingImgUrl( b.building.id ),
       workers_needed: Math.ceil( b.workersNeeded ) + "/" + b.building.data.workers_needed,
-      professors_needed: b.workersNeeded ? Math.ceil( b.building.data.professors_needed * b.building.data.workers_needed / b.workersNeeded ) : 0,
+      professors_needed: b.building.data.professors_needed ? Math.ceil( b.professorsNeeded ) + "/" + b.building.data.professors_needed : "",
       efficiency_needed: Math.ceil( b.efficiencyNeeded * 100 ?? 0 ),
       electricity_needed: Math.ceil( b.electricNeeded ),
       result: b
@@ -285,12 +297,17 @@ function reset() {
   goal.value.clear()
 }
 
-function disTonns(v: number) { return (Math.round( v * 100 ) / 100).toString() }
+function disTonns(v: number) { return (Math.round( v * 1000 ) / 1000).toString() }
+
+function onCellEditComplete(a) {
+  console.log(a)
+}
 
 Array.prototype.equals = function( array ) {
   return this.length == array.length &&
       this.every( function(this_i,i) { return this_i == array[i] } )
 }
+
 
 </script>
 
@@ -301,8 +318,8 @@ Array.prototype.equals = function( array ) {
 <!--  }]">-->
 
 <!--  </Menubar>-->
-  <Splitter layout="vertical" class="w-full h-full">
-    <SplitterPanel>{{expandedKeys}}
+  <Splitter layout="vertical">
+    <SplitterPanel>
       <!--      <Dropdown v-model="selectedResource" :options = "resources" placeholder="select goal resource" @update:modelValue="addGoal($event)">
         <template #option="slotProps">
           <div class="flex align-items-center">
@@ -332,23 +349,38 @@ Array.prototype.equals = function( array ) {
           </div>
         </Button>
       </div>
-      <DataTable stripedRows  :value="goalsTable" tableStyle="min-width: 50rem" v-if="goalsTable.length > 0" size="small">
+      <DataTable stripedRows
+                 :value="goalsTable" tableStyle="min-width: 50rem"
+                 v-if="goalsTable.length > 0"
+                 size="small"
+                 editMode="cell" @cell-edit-complete="onCellEditComplete"
+      >
         <template #header>
           <div class="flex flex-wrap align-items-center justify-content-between gap-2">
             <h1 class="font-bold text-lg">Goal</h1>
-            <Button rounded raised label="Clear" @click="reset" size="small" />
+<!--            <Button raised outlined title="clear all" @click="reset" size="small" class="p-0">-->
+            <a @click="reset">
+              <img src="@/assets/i/g/button_deleteall.png" width="48" height="48">
+            </a>
+<!--            </Button>-->
           </div>
         </template>
-        <Column header="Icon">
+        <Column header="Icon" class="w-3rem">
           <template #body="{ data }">
             <img :alt="data.key" :src="resourceImgUrl(data.key)" style="width: 24px" class="white-space-nowrap" />
           </template>
         </Column>
         <Column field="key" header="Resource"></Column>
-        <Column field="amount" header="Amount, t/day"></Column>
+        <Column field="amount" header="Amount, t/day" class="w-5">
+          <template #editor="{ data, field }">
+            <InputNumber :modelValue="goal.get(data.key)" @update:modelValue="goal.set( data.key, $event )" showButtons buttonLayout="horizontal"/>
+          </template>
+        </Column>
         <Column class="w-3rem">
           <template #body="{data}">
-          <Button icon="pi pi-times" rounded outlined severity="danger" size="small" @click="removeGoal( data.key )"></Button>
+            <a @click="removeGoal( data.key )">
+              <img src="@/assets/i/g/button_cancel.png" width="48" height="48">
+            </a>
           </template>
         </Column>
       </DataTable>
@@ -378,7 +410,7 @@ Array.prototype.equals = function( array ) {
 <!--              </span>-->
 <!--          </template>-->
         </Column>
-        <Column header="Icon">
+        <Column header="Icon" class="w-4rem">
           <template #body="{ node }">
 <!--              <span class="inline-flex align-items-center">-->
               <img :alt="node.key" :src="buildingImgUrl(node.data.name)" style="width: 48px" class="white-space-nowrap"/>
@@ -390,7 +422,9 @@ Array.prototype.equals = function( array ) {
           <template #body="{ node }">
             <Chip v-for="productResult in node.data.result.products"
                   :label="disTonns(productResult[1])"
-                  :image="resourceImgUrl(productResult[0])"/>
+                  :image="resourceImgUrl(productResult[0])" class="mx-1"
+              :title="productResult[0]"
+            />
 
           </template>
         </Column>
@@ -398,10 +432,19 @@ Array.prototype.equals = function( array ) {
           <template #body="{ node }">
             <Chip v-for="(demand, resource) in (node.data.result.building.data.consumption ?? {})"
                   :label="disTonns(demand * (node.data.result.workersNeeded || node.data.result.efficiencyNeeded ))"
-                  :image="resourceImgUrl(resource)"/>
+                  :image="resourceImgUrl(resource)"
+                  class="mx-1"
+                  :title="resource"
+            />
           </template>
         </Column>
         <Column field="workers_needed" header="Workers needed">
+<!--          <template #body="{ node }">-->
+<!--            <div :style="{-->
+
+<!--              width: node.workersNeeded + 'px'-->
+<!--            }" class="workers-bg"></div>-->
+<!--          </template>-->
           <template #footer="{ column }">{{ Math.ceil( columnSum('workersNeeded') ) }}</template>
         </Column>
         <Column field="professors_needed" header="Professors needed">
@@ -424,5 +467,10 @@ Array.prototype.equals = function( array ) {
 </template>
 
 <style scoped>
+.workers-bg {
+  background: url('@/assets/i/g/workers_workers_loedu.png') repeat-x -4px 0;
+  background-size: 16px 24px;
+  height: 24px;
+}
 
 </style>
